@@ -1,0 +1,55 @@
+﻿@page
+@model Restaurant.Pages.Requisitions.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Requisition</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.StockId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.StockId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.Unit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.Unit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.Opening)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.Opening)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.Issued)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.Issued)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Requisition.Close)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Requisition.Close)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Requisition.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

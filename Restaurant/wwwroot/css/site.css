@@ -1,0 +1,403 @@
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* QR code generator */
+#qrCode {
+    margin: 15px;
+}
+
+/* Custom styles starts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    font-family: monospace;
+    background-color: #f1f1f1;
+    /* background-color: #e9e9e9;
+    background-color: #e3e0e0; */
+    color: #131516;
+    color: #02075d;
+    color: #100404;
+    font-size: 16px;
+    /* font-size: 18px; */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header styles*/
+
+/* header {
+  background-color: #DFFF00;
+  background-color: #fefefe;
+  background-color: #02075DEE;
+  box-shadow: 0px 0px 7px 4px rgba(50,50,50,.9);
+  border-bottom: 2px solid #dee2e6;
+  min-height: 50px;
+} */
+
+
+header {
+    color: white;
+    /* background-color: #000;
+  background-color: #a42100;
+  background-color: #7b1515;
+  background-color: #900104; */
+    /* border-bottom: 1px solid #f1f1f1; */
+    /* background-color: transparent; */
+    /* background-image: linear-gradient(0deg, #7b1515 60%, #100404 ); */
+    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #900104aa;
+    box-shadow: 0px 0px 7px 4px rgba(0,0,0,.9);
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+.theme {
+    background-color: #000;
+    background-color: #a42100;
+    background-color: #7b1515;
+    background-color: #900104;
+}
+
+#biz-nav {
+    background-color: #100404;
+    background-color: #100;
+    background-image: linear-gradient(180deg,#100404 25%,#7b1515 50%, #100404 75%);
+    /* opacity: 0.9; */
+}
+
+.fixed-top {
+    padding: 0;
+}
+
+.navbar {
+    padding: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    color: #fff;
+}
+
+.content-wrapper {
+    padding-top: 150px;
+    padding-bottom: 1.5rem;
+}
+
+/* .header-title {
+  width: 30%;
+} */
+
+#header-img {
+    max-width: 100%;
+}
+
+.dashboard {
+    display: block;
+    position: fixed;
+    /* top: 6em; */
+    /* top: 150px; */
+    /* bottom: 0; */
+    /* bottom: 50px; */
+    height: 100vh;
+    left: 0;
+    z-index: 10;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* background-color: #a42100;  
+  background-color: #100;
+  background-color: #100404; */
+    /* background-color: #e3e0e0;
+  background-color: #e9e9e9;
+  background-color: #f4f3f3;
+  background-color: #e9e9e9; */
+    background-color: #f1f1f1;
+    /* background-color: rgb(30 5 5); */
+    padding-bottom: 1em;
+    padding-top: 1em;
+    /* color: #e0e0ff; */
+    /* color: #02075d; */
+    transition: width 0.2s ease 0.1s;
+    /* padding: 1em 0; */
+    /* box-shadow: 0px 3px 6px #888;
+  box-shadow: 0px 0px 3px 2px rgba(0,0,0,.9); */
+    /* box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.3); */
+}
+
+.tableBox {
+    max-width: 5em;
+    height: 36px;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+.main {
+    margin: auto;
+    padding: 1em;
+    box-shadow: inset 0px 0px 4px 2px #a7a6a6aa;
+}
+
+.sales-main {
+    margin-left: auto;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    /* border: 1px solid #888d; */
+    background-color: #f8f9fa;
+    /* background-color: #f3f3f3; */
+    /* background-color: #e0e0e0; */
+    box-shadow: inset 0px 0px 4px 2px #a7a6a6aa;
+}
+
+.main-content {
+    overflow-x: auto;
+}
+
+footer {
+    /* height: 2%; */
+    bottom: 50px;
+}
+
+#search .input-group {
+    width: 80%;
+}
+
+.form-control {
+    text-align: center;
+}
+
+.card {
+    margin: 1em 0;
+    box-shadow: 0px 5px 8px #888;
+}
+
+.card-header {
+    /* background-color: #bbba; */
+    color: #a42100;
+    color: #100404;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* justify-content: space-between; */
+    /* border-top: 2px solid #000;
+  border-top: 2px solid #02075d; */
+    /* margin: 0.7em; */
+    /* padding: 0.5em; */
+    /* padding: 0 15px 0 ; */
+}
+
+.cart-icon {
+    color: #7b1515;
+    position: absolute;
+    right: 0.5em;
+    /* top: 0.5em; */
+}
+
+#cart-qty {
+    background-color: #e6dcd0;
+}
+
+.card-title {
+    /* background-color: #bbba; */
+    color: #a42100;
+    color: #100404;
+    font-weight: 600;
+    justify-content: space-between;
+}
+
+.img-thumbnail {
+    /* width: 100px; */
+    max-width: 100%;
+    margin: 0.5em 0;
+}
+
+/* Common style */
+.btn {
+    /* min-height: 40px; */
+    /* min-width: 90px;  */
+    /* margin: 4px; */
+    font-weight: 500;
+    text-transform: uppercase;
+    text-transform: capitalize;
+    color: #f0f0e0;
+    background-color: #02075d;
+    background-color: #7b1515;
+    background-image: linear-gradient(180deg,#100404 25%,#7b1515 50%, #100404 75%);
+    background-image: linear-gradient(180deg,#100404 -15%,#7b1515 50%, #100404 115%);
+    border: 1px solid #ced4da;
+    box-shadow: 8px 10px 20px 0 rgba(46,61,73,.15);
+    transition: all .5s ease;
+}
+
+.btn-nav {
+    width: 48px;
+    font-size: 1.5em;
+    padding: 0;
+    font-weight: 500;
+    color: #f0f0e0;
+    background-color: transparent;
+    border: 0;
+    transition: all .5s ease;
+}
+
+.btn:hover {
+    color: #02075d;
+    color: #fff;
+    /* color: #7b1515; */
+    background-color: #f0f0e0;
+    background-image: linear-gradient(180deg,#7b1515 25%,#100404 50%,#7b1515 75%);
+    background-image: linear-gradient(180deg,#7b1515 -15%,#100404 50%,#7b1515 115%);
+    border: 1px solid #02075d;
+    border: 1px solid #7b1515;
+}
+
+.btn-sm {
+    font-size: 1.6em;
+    /* padding: 0 0.1rem; */
+    padding: 0.5rem;
+    padding: 0.2rem;
+}
+
+a:hover {
+    color: #d0d0d0;
+}
+
+.table-title {
+    background: #7b1515;
+    /* background: #435d7d; */
+    /* background: #02075d; */
+    color: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+/* table {
+  background: #fff;
+  padding: 1em;
+  border-radius: 3px;
+  min-width: 1000px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  text-align: center;
+}
+
+.table thead th, .table th, .table td {
+  padding: 0.7em 0.4em;
+  padding: 6px;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  border: 1px solid #e0e0e0;
+  border: 1px solid #dee2e6;
+}
+
+
+td .form-control {
+  padding: 0;
+  border: 0;
+  border: 1px solid #f0f0f0;
+} */
+
+table {
+    text-align: center;
+}
+
+.table th, .table td, .table thead th {
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+@media (max-width: 575.98px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .page-wrap {
+        padding: 0;
+    }
+
+    .content-wrapper {
+        margin: 0;
+        padding: 0;
+    }
+
+    .content-wrapper {
+        padding-top: 150px;
+    }
+
+    .dashboard {
+        left: -1000px;
+    }
+
+    .show {
+        left: 0 !important;
+    }
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+    }
+
+    .nav-link {
+        padding: 0.5rem;
+    }
+}
+
+/* Custome styles ends */
+
+
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

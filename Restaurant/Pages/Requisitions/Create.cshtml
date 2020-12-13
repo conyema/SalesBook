@@ -1,0 +1,59 @@
+﻿@page
+@model Restaurant.Pages.Requisitions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Requisition</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Requisition.StockId" class="control-label"></label>
+                <input asp-for="Requisition.StockId" class="form-control" />
+                <span asp-validation-for="Requisition.StockId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requisition.Description" class="control-label"></label>
+                <input asp-for="Requisition.Description" class="form-control" />
+                <span asp-validation-for="Requisition.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requisition.Unit" class="control-label"></label>
+                <input asp-for="Requisition.Unit" class="form-control" />
+                <span asp-validation-for="Requisition.Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requisition.Opening" class="control-label"></label>
+                <input asp-for="Requisition.Opening" class="form-control" />
+                <span asp-validation-for="Requisition.Opening" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requisition.Issued" class="control-label"></label>
+                <input asp-for="Requisition.Issued" class="form-control" />
+                <span asp-validation-for="Requisition.Issued" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Requisition.Close" class="control-label"></label>
+                <input asp-for="Requisition.Close" class="form-control" />
+                <span asp-validation-for="Requisition.Close" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,113 @@
+﻿@page
+@model Restaurant.Pages.Requisitions.IndexModel
+
+@{
+    ViewData["Title"] = "Requisitions";
+}
+
+
+
+<div>
+
+    <!-- <h2>Index</h2>
+
+    <p>
+        <a asp-page="Create">Make a new requisition</a>
+    </p>  -->
+
+    <main class="main" role="main">
+        <div class="table-title">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Requisition Refile</h2>
+                </div>
+            </div>
+        </div>
+        <div class="main-content container-fluid">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col" colspan="4">
+                            <form id="search" class="form-inline justify-content-center">
+                                <div class="input-group">
+                                    <input id="search-box" class="form-control" type="search" placeholder="Search Menu" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="btn" type="submit" aria-label="Search">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                                 aria-label="search" class="" name="search">
+                                                <path fill="currentColor"
+                                                      d="M6.222 0C2.8 0 0 2.794 0 6.216s2.8 6.222 6.222 6.222a6.174 6.174 0 0 0 3.538-1.121l3.364 3.357a1.091 1.091 0 0 0 1.555 0 1.095 1.095 0 0 0 0-1.549l-3.363-3.364a6.164 6.164 0 0 0 1.12-3.545C12.437 2.794 9.638 0 6.223 0zm0 2.19a4.007 4.007 0 0 1 4.018 4.026 4.007 4.007 0 0 1-4.018 4.025 4.008 4.008 0 0 1-4.025-4.025A4.008 4.008 0 0 1 6.222 2.19z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </th>
+                        <th scope="col" colspan="3">Qty</th>
+                        <th scope="col"></th>
+                        <!-- <th scope="col" rowspan="2">Action Menu</th> -->
+                    </tr>
+                    <tr>
+                        <th scope="col">
+                            S/N
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].StockId)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].Description)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].Unit)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].Opening)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].Issued)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Requisition[0].Close)
+                        </th>
+                        <th scope="col">Action Menu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Requisition)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StockId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Unit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Opening)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Issued)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Close)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <a class="btn m-4" asp-page="Create">Make a new requisition</a>
+        </div>
+    </main>
+</div>
