@@ -1,0 +1,87 @@
+﻿@page
+@model Restaurant.Pages.Menus.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!--
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p> -->
+
+<div>
+    <main class="main" role="main">
+        <div class="table-title">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Menu Register</h2>
+                </div>
+            </div>
+        </div>
+        <div class="main-content container-fluid">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">S/N</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].Name)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].Category)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].Unit)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].Price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].Qty)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Menu[0].ImageUrl)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Menu)
+                    {
+                        <tr>
+                            <td scope="row"></td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Unit)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Qty)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ImageUrl)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.MenuId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.MenuId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.MenuId">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <a class="btn" asp-page="Create">Create New</a>
+        </div>
+    </main>
+</div>

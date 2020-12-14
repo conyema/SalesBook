@@ -1,0 +1,134 @@
+﻿@page
+@model Restaurant.Pages.Menus.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!--
+<h2>Create</h2>
+
+
+<h4>Menu</h4>
+<hr />  
+ -->
+
+<div>
+    <main class="main" role="main">
+        <div class="table-title">
+            <div class="row">
+                <div class="col text-center">
+                    <h2>Food Menu Form</h2>
+                </div>
+            </div>
+        </div>
+        <div class="main-content container-fluid">
+            <form id="food-menu-form" method="post">
+                <div class="row row-cols-1 row-cols-md-2 mt-3">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="col col-md-8">
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.Name" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.Name" class="form-control" />
+                                <span asp-validation-for="Menu.Name" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.Category" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.Category" class="form-control" />
+                                <span asp-validation-for="Menu.Category" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.Price" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.Price" class="form-control" />
+                                <span asp-validation-for="Menu.Price" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <!--
+    <fieldset class="form-group">
+        <div class="row">
+            <legend class="col-form-label col-3 pt-0">Preservable</legend>
+            <div class="col-9">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isPreservable" id="isPreservable1" value="yes"
+                           checked>
+                    <label class="form-check-label" for="isPreservable1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="isPreservable" id="isPreservable2" value="no">
+                    <label class="form-check-label" for="isPreservable2">
+                        No
+                    </label>
+                </div>
+            </div>
+        </div>
+    </fieldset> -->
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.Unit" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.Unit" class="form-control" />
+                                <span asp-validation-for="Menu.Unit" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.Qty" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.Qty" class="form-control" />
+                                <span asp-validation-for="Menu.Qty" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-md-4 text-center">
+                        <!-- image preview -->
+                        <!--
+    <figure>
+        <img id="output" class="img-thumbnail rounded-top" width="200" height="200" />
+        <figcaption>Menu Image</figcaption>
+    </figure>
+
+    <div class="form-group">
+        <label for="image" class="btn col-form-label menu-img-label">Choose Image</label>
+        <div class="col-sm-8">
+            <input type="file" accept="image/*" class="form-control d-none" id="image" name="image" onchange="viewImage(event)">
+        </div>
+    </div> -->
+
+                        <div class="form-group row">
+                            <label asp-for="Menu.ImageUrl" class="col-sm-4 col-form-label"></label>
+                            <div class="col-sm-8">
+                                <input asp-for="Menu.ImageUrl" class="form-control" />
+                                <span asp-validation-for="Menu.ImageUrl" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <button class="btn m-4" type="reset">Reset</button>
+                <button class="btn m-4" type="submit">Save</button>
+            </form>
+        </div>
+        <div>
+            <a asp-page="Index">Back to List</a>
+        </div>
+    </main>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

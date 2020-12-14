@@ -1,0 +1,60 @@
+﻿@page
+@model Restaurant.Pages.Menus.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Menu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Menu.MenuId" />
+            <div class="form-group">
+                <label asp-for="Menu.Name" class="control-label"></label>
+                <input asp-for="Menu.Name" class="form-control" />
+                <span asp-validation-for="Menu.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu.Category" class="control-label"></label>
+                <input asp-for="Menu.Category" class="form-control" />
+                <span asp-validation-for="Menu.Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu.Unit" class="control-label"></label>
+                <input asp-for="Menu.Unit" class="form-control" />
+                <span asp-validation-for="Menu.Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu.Price" class="control-label"></label>
+                <input asp-for="Menu.Price" class="form-control" />
+                <span asp-validation-for="Menu.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu.Qty" class="control-label"></label>
+                <input asp-for="Menu.Qty" class="form-control" />
+                <span asp-validation-for="Menu.Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Menu.ImageUrl" class="control-label"></label>
+                <input asp-for="Menu.ImageUrl" class="form-control" />
+                <span asp-validation-for="Menu.ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

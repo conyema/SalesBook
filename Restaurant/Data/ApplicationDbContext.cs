@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Restaurant.Data;
 
 namespace Restaurant.Data
 {
@@ -14,5 +15,9 @@ namespace Restaurant.Data
         }
 
         public DbSet<Requisition> Requisitions { get; set; }
+
+        public DbSet<Restaurant.Data.Menu> Menu { get; set; }
+
+        public DbSet<Restaurant.Data.Ingredient> Ingredient { get; set; }
     }
 }

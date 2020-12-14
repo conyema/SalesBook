@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Data;
 
-namespace Restaurant.Pages.Requisitions
+namespace Restaurant.Pages.Menus
 {
     public class DeleteModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Restaurant.Pages.Requisitions
         }
 
         [BindProperty]
-        public Requisition Requisition { get; set; }
+        public Menu Menu { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace Restaurant.Pages.Requisitions
                 return NotFound();
             }
 
-            Requisition = await _context.Requisitions.FirstOrDefaultAsync(m => m.ReqId == id);
+            Menu = await _context.Menu.FirstOrDefaultAsync(m => m.MenuId == id);
 
-            if (Requisition == null)
+            if (Menu == null)
             {
                 return NotFound();
             }
@@ -44,11 +44,11 @@ namespace Restaurant.Pages.Requisitions
                 return NotFound();
             }
 
-            Requisition = await _context.Requisitions.FindAsync(id);
+            Menu = await _context.Menu.FindAsync(id);
 
-            if (Requisition != null)
+            if (Menu != null)
             {
-                _context.Requisitions.Remove(Requisition);
+                _context.Menu.Remove(Menu);
                 await _context.SaveChangesAsync();
             }
 

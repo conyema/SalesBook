@@ -13,10 +13,10 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Requisition.StockId)
+            @Html.DisplayNameFor(model => model.Requisition.SKU)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Requisition.StockId)
+            @Html.DisplayFor(model => model.Requisition.SKU)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Requisition.Description)
@@ -51,7 +51,7 @@
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="Requisition.Id" />
+        <input type="hidden" asp-for="Requisition.ReqId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-page="./Index">Back to List</a>
     </form>

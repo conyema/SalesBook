@@ -1,0 +1,59 @@
+﻿@page
+@model Restaurant.Pages.Ingredients.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Ingredient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Ingredient.MenuId" class="control-label"></label>
+                <input asp-for="Ingredient.MenuId" class="form-control" />
+                <span asp-validation-for="Ingredient.MenuId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.SKU" class="control-label"></label>
+                <input asp-for="Ingredient.SKU" class="form-control" />
+                <span asp-validation-for="Ingredient.SKU" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Description" class="control-label"></label>
+                <input asp-for="Ingredient.Description" class="form-control" />
+                <span asp-validation-for="Ingredient.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Unit" class="control-label"></label>
+                <input asp-for="Ingredient.Unit" class="form-control" />
+                <span asp-validation-for="Ingredient.Unit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Qty" class="control-label"></label>
+                <input asp-for="Ingredient.Qty" class="form-control" />
+                <span asp-validation-for="Ingredient.Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredient.Servings" class="control-label"></label>
+                <input asp-for="Ingredient.Servings" class="form-control" />
+                <span asp-validation-for="Ingredient.Servings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

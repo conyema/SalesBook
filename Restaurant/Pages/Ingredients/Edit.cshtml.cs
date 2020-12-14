@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Data;
 
-namespace Restaurant.Pages.Requisitions
+namespace Restaurant.Pages.Ingredients
 {
     public class EditModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace Restaurant.Pages.Requisitions
         }
 
         [BindProperty]
-        public Requisition Requisition { get; set; }
+        public Ingredient Ingredient { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,9 @@ namespace Restaurant.Pages.Requisitions
                 return NotFound();
             }
 
-            Requisition = await _context.Requisitions.FirstOrDefaultAsync(m => m.ReqId == id);
+            Ingredient = await _context.Ingredient.FirstOrDefaultAsync(m => m.IngredientId == id);
 
-            if (Requisition == null)
+            if (Ingredient == null)
             {
                 return NotFound();
             }
@@ -45,7 +45,7 @@ namespace Restaurant.Pages.Requisitions
                 return Page();
             }
 
-            _context.Attach(Requisition).State = EntityState.Modified;
+            _context.Attach(Ingredient).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace Restaurant.Pages.Requisitions
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!RequisitionExists(Requisition.ReqId))
+                if (!IngredientExists(Ingredient.IngredientId))
                 {
                     return NotFound();
                 }
@@ -66,9 +66,9 @@ namespace Restaurant.Pages.Requisitions
             return RedirectToPage("./Index");
         }
 
-        private bool RequisitionExists(int id)
+        private bool IngredientExists(int id)
         {
-            return _context.Requisitions.Any(e => e.ReqId == id);
+            return _context.Ingredient.Any(e => e.IngredientId == id);
         }
     }
 }

@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace Restaurant.Data
 {
-    public class Requisition
+    public class Ingredient
     {
         [Key]
-        public int ReqId { get; set; }
+        public int IngredientId { get; set; }
+
+        [Required]
+        public int MenuId { get; set; }
 
         [Required]
         public string SKU { get; set; }
 
-        [Required]
         public string Description { get; set; }
 
         public string Unit { get; set; }
 
-        public float Opening { get; set; }
+        public float Qty { get; set; }
 
-        public float Issued { get; set; }
-
-        public float Close { get; set; }
+        public int Servings { get; set; }
     }
 }

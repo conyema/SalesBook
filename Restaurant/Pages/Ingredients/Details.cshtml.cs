@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Restaurant.Data;
 
-namespace Restaurant.Pages.Requisitions
+namespace Restaurant.Pages.Ingredients
 {
     public class DetailsModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace Restaurant.Pages.Requisitions
             _context = context;
         }
 
-        public Requisition Requisition { get; set; }
+        public Ingredient Ingredient { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -27,9 +27,9 @@ namespace Restaurant.Pages.Requisitions
                 return NotFound();
             }
 
-            Requisition = await _context.Requisitions.FirstOrDefaultAsync(m => m.ReqId == id);
+            Ingredient = await _context.Ingredient.FirstOrDefaultAsync(m => m.IngredientId == id);
 
-            if (Requisition == null)
+            if (Ingredient == null)
             {
                 return NotFound();
             }

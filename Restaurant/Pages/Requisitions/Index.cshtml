@@ -53,7 +53,7 @@
                             S/N
                         </th>
                         <th scope="col">
-                            @Html.DisplayNameFor(model => model.Requisition[0].StockId)
+                            @Html.DisplayNameFor(model => model.Requisition[0].SKU)
                         </th>
                         <th scope="col">
                             @Html.DisplayNameFor(model => model.Requisition[0].Description)
@@ -78,10 +78,10 @@
                     {
                         <tr>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Id)
+                                @Html.DisplayFor(modelItem => item.ReqId)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.StockId)
+                                @Html.DisplayFor(modelItem => item.SKU)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.Description)
@@ -99,9 +99,9 @@
                                 @Html.DisplayFor(modelItem => item.Close)
                             </td>
                             <td>
-                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                                <a asp-page="./Edit" asp-route-id="@item.ReqId">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.ReqId">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.ReqId">Delete</a>
                             </td>
                         </tr>
                     }
